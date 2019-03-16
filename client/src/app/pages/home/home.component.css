@@ -1,0 +1,12 @@
+.head-desc {
+  color: #36456A;
+  text-align: center;
+  font-weight: 600;
+  font-size: 3rem;
+  padding-top: 2rem;
+}
+
+.desc-fade {
+  color: rgba(54, 69, 106, 0.5);
+  display: initial;
+}

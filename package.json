@@ -1,0 +1,39 @@
+{
+  "name": "srtt.me",
+  "version": "1.0.0",
+  "description": "Open-source URL Shortener",
+  "main": "./server/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-api": "nodemon ./server/main.js",
+    "start-srtt": "cd client && ng serve",
+    "start": "concurrently npm:start-*",
+    "build": "cd client && ng build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z-crp/srtt.me.git"
+  },
+  "keywords": [
+    "url-shortner",
+    "angular",
+    "nodejs"
+  ],
+  "author": "Bishwajyoti Roy <bishwajyoti456@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/z-crp/srtt.me/issues"
+  },
+  "homepage": "https://github.com/z-crp/srtt.me#readme",
+  "dependencies": {
+    "@sentry/node": "^4.6.4",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "passport-github2": "^0.1.11",
+    "useragent": "^2.3.0"
+  }
+}
