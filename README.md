@@ -34,7 +34,7 @@ You need to have [Node.js](https://nodejs.org/), [Angular.JS](https://angular.io
 
 1. Clone this repository or [download zip](https://github.com/z-crp/srtt.me/archive/develop.zip).
 2. Install dependencies: `npm install`.
-3. Run for development: `npm run dev`.
+3. Run for development: `npm start`.
 4. Run for production: `npm run build` then `npm start`.
 
 ## API
