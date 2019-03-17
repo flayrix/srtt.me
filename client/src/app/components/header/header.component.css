@@ -10,7 +10,8 @@
 }
 
 .nav-link {
-  padding: 2.5rem 1rem;
+  margin: 2.5rem 1rem;
+  padding: 0;
   color: #36456A;
   text-decoration: none;
   font-weight: 300;
@@ -41,12 +42,9 @@
   overflow: hidden;
   padding: 8px 20px;
   border-radius: 30px;
-
-
   text-align: center;
   display: inline-block;
   will-change: transform;
-
   overflow: hidden;
   transition: 0.3s ease-in-out;
   z-index: 1;

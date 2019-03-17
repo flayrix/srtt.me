@@ -46,6 +46,7 @@ app.use((req, res, next) => {
 
 // 
 app.use(express.static(path.join(__dirname + '/../client/dist/srtt')));
+app.use(express.static(path.join(__dirname + '/../static')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('client/dist/srtt/index.html'));
