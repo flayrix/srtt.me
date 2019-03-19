@@ -18,13 +18,13 @@ exports.generateUrl = (count) => {
 };
 
 exports.preservedUrls = [
-    'login',
-    'logout',
-    'contact',
-    '404',
-    'view',
-    'api',
-    'verify',
-    'terms',
-    'privacy',
+    '/login',
+    '/logout',
+    '/contact',
+    '/404',
+    '/view',
+    '/api',
+    '/verify',
+    '/terms',
+    '/privacy',
 ];
