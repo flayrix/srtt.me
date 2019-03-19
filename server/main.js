@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname + '/../client/dist/srtt')));
 app.use(express.static(path.join(__dirname + '/../static')));
 
 app.get(preservedUrls, (req, res) => {
-    res.sendFile(path.resolve('client/dist/srtt/index.html'));
+    res.sendFile(path.join(__dirname + '/../client/dist/srtt/index.html'));
 });
 
 app.use('/api/', require('./route/api'));

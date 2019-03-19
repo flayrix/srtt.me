@@ -18,6 +18,7 @@ exports.generateUrl = (count) => {
 };
 
 exports.preservedUrls = [
+    '/',
     '/login',
     '/logout',
     '/contact',
