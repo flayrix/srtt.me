@@ -33,9 +33,9 @@
       <li class="list-group-item" *ngFor="let item of localUrls">
         <div class="url-data">
           <div class="short-url">
-            <a href="{{item.shortUrl}}">{{item.shortUrl}}</a>
+            <a class="{{item.shortId}}" href="{{item.shortUrl}}" target="_blank">{{item.shortUrl}}</a>
           </div>
-          <a class="dest-url" href="{{item.destUrl}}">{{item.destUrl}}</a>
+          <a class="dest-url" href="{{item.destUrl}}" target="_blank">{{item.destUrl}}</a>
         </div>
         <button class="btn btn-default action-copy" type="button" ngxClipboard cbContent={{item.shortUrl}}>
           <svg height="36px" viewBox="-40 0 512 512" width="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
