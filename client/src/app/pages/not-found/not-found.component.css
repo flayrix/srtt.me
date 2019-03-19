@@ -1,0 +1,8 @@
+.head-desc {
+  color: #36456A;
+  text-align: center;
+  font-weight: 600;
+  font-size: 3rem;
+  padding-top: 2rem;
+  transition: 0.3s ease-in-out;
+}

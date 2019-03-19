@@ -1,0 +1,24 @@
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  /* -webkit-box-shadow: 0px 10px 68px -24px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 0px 10px 68px -24px rgba(0, 0, 0, 0.72);
+  box-shadow: 0px 10px 68px -24px rgba(0, 0, 0, 0.72); */
+  box-shadow: rgba(50, 50, 50, 0.2) 0px 6px 30px;
+  /* background-color: rgba(52, 67, 105, 0.08); */
+  /* #5533ff */
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
