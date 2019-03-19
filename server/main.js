@@ -8,6 +8,12 @@ const morgan = require('morgan');
 const path = require('path');
 const Sentry = require('@sentry/node');
 const config = require('./config');
+const cors = require('cors');
+const {
+    preservedUrls
+} = require('./utils');
+
+let Url = require('./model/url');
 
 // The Sentry middleware for error logging
 Sentry.init({
@@ -32,36 +38,40 @@ db.on('error', function (err) {
     console.log(err);
 });
 
+// use CORS
+app.use(cors());
 app.set('trust proxy', true);
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended: false
 }));
 app.use((req, res, next) => {
     req.realIp = req.headers['x-real-ip'] || req.connection.remoteAddress || '';
     return next();
 });
 
-// 
+// serve static files
 app.use(express.static(path.join(__dirname + '/../client/dist/srtt')));
 app.use(express.static(path.join(__dirname + '/../static')));
 
-app.get('/', (req, res) => {
+app.get(preservedUrls, (req, res) => {
     res.sendFile(path.resolve('client/dist/srtt/index.html'));
 });
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve('client/dist/srtt/index.html'));
-});
-
-app.get('/api/', (req, res) => {
-    const url = req.params.id;
-});
+app.use('/api/', require('./route/api'));
 
 app.get('/:id', (req, res) => {
     const url = req.params.id;
+    Url.findOne({
+            'shortId': url
+        }).exec()
+        .then(urlData => {
+            if (!urlData)
+                return res.redirect('/404');
+            return res.status(301).redirect(urlData.destUrl);
+        });
 });
 
 app.listen(config.PORT, err => {
