@@ -8,4 +8,7 @@ module.exports = {
     MONGO_URL: process.env.MONGO_URL || 'mongodb_url',
 
     SENTRY_DSN: 'sentry_dns_link',
+
+    /* Google reCaptcha key */
+    RECAPTCHA_SECRET_KEY: 'google_recaptcha_secret',
 };

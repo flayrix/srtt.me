@@ -4,13 +4,14 @@
     S<div class="desc-fade">ho</div>rtt your URLs. Smartly.
   </div>
   <div class="form-holder">
-    <form class="subscribe_form">
+    <form class="subscribe_form" #captchaProtectedForm="ngForm">
       <div class="input-group">
         <input type="text" class="form-control url-input" name="url" placeholder="Paste your URL" autocomplete="off"
           [(ngModel)]="urlData.url">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button" (click)="onUrlSubmit()">
-            <svg class="svg" height="40px" viewBox="0 -66 511.9995 511" width="40px" xmlns="http://www.w3.org/2000/svg"
+          <button class="btn btn-default" type="button" (click)="captchaRef.reset(); captchaRef.execute(); isSubmiting=true;">
+            <i class="fa fa-spinner fa-spin" *ngIf="isSubmiting"></i>
+            <svg *ngIf="!isSubmiting" class="svg" height="40px" viewBox="0 -66 511.9995 511" width="40px" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="512.0001062241" y1="190.479588115" y2="190.479588115">
                 <stop offset="0" stop-color="#87f1fc" />
@@ -54,3 +55,5 @@
     </ul>
   </div>
 </div>
+<re-captcha #captchaRef="reCaptcha" [(ngModel)]="urlData.captcha" (resolved)="onUrlSubmit($event)" siteKey="6LfgoZgUAAAAAL_IG6g-q7rif5mTxlf4hp2sg3Qx"
+  size="invisible" #captchaControl="ngModel"></re-captcha>

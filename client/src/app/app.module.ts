@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ClipboardModule } from 'ngx-clipboard';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ClipboardModule
+    ClipboardModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
